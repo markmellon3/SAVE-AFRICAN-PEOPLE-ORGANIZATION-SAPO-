@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="view<!DOCTYPEport" content="width=device-width, initial-scale=1.0" />
+  <title>SAVE AFRICAN PEOPLE  ADMIN PANEL </title>
+<!-- Favicon -->
+<link rel="icon" type="image/webp" sizes="16x16" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="32x32" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="96x96" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Text auto scales */
+.logo-text{
+  font-size: clamp(16px, 3vw, 24px);
+  white-space: nowrap;
+}
+
+/* Circular logo container */
+.logo-icon{
+  width: clamp(30px, 4vw, 45px);
+  height: clamp(30px, 4vw, 45px);
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image scales perfectly */
+.logo-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+footer {
+  /* Heading */
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+}
+
+</style>
+</head>
+<!-- ==========================
+     Header + Gallery Component
+=========================== -->
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-text">🌍 SAVE AFRICAN PEOPLE ORGANIZATION ADMIN PANEL </span>
+    <span class="logo-icon">
+      <img src="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp" alt="Organization Logo">
+    </span>
+  </div>
+  <nav>
+    <a href="#">ADMIN PANEL </a>
+  </nav>
+</header>
+<div class="container">
+  <h1>📩 Contact Messages</h1>
+
+  <div class="message-list" id="message-list"></div>
+  <div class="empty" id="empty">No messages yet.</div>
+</div>
+
+<!-- Firebase Admin Script -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getDatabase, ref, onChildAdded, remove } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyBFG_t_gpU6TvSTpeN35aQTalZpMDV2dKQ",
+  authDomain: "save-africa-fb494.firebaseapp.com",
+  databaseURL: "https://save-africa-fb494-default-rtdb.firebaseio.com",
+  projectId: "save-africa-fb494",
+  storageBucket: "save-africa-fb494.appspot.com",
+  messagingSenderId: "132840027455",
+  appId: "1:132840027455:web:f0350b2dedb572ea984f8a",
+  measurementId: "G-1T13K0RS7D"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const messagesRef = ref(db, "mails");
+const messageListEl = document.getElementById("message-list");
+const emptyEl = document.getElementById("empty");
+
+// Format timestamp to readable date
+function formatDate(ts) {
+  const d = new Date(ts);
+  return d.toLocaleString();
+}
+
+// Add message card
+function addMessageCard(id, data) {
+  const card = document.createElement("div");
+  card.className = "message-card";
+
+  card.innerHTML = `
+    <div class="info">
+      <span><strong>Name:</strong> ${data.name}</span>
+      <span><strong>Email:</strong> ${data.email}</span>
+      <span><strong>Message:</strong> ${data.message}</span>
+      <span><strong>Sent At:</strong> ${formatDate(data.timestamp)}</span>
+    </div>
+    <div class="actions">
+      <button class="delete-btn">Delete</button>
+    </div>
+  `;
+
+  // Delete button functionality
+  card.querySelector(".delete-btn").onclick = () => {
+    if (confirm("Are you sure you want to delete this message?")) {
+      remove(ref(db, "mails/" + id));
+      card.remove();
+      if (messageListEl.children.length === 0) {
+        emptyEl.style.display = "block";
+      }
+    }
+  };
+
+  messageListEl.prepend(card);
+}
+
+// Listen for new messages
+onChildAdded(messagesRef, snapshot => {
+  const data = snapshot.val();
+  if (!data) return;
+  emptyEl.style.display = "none";
+  addMessageCard(snapshot.key, data);
+});
+</script>
+<div class="container">
+  <h1>🛠 Gallery Admin Dashboard</h1>
+
+  <!-- ADD / EDIT FORM -->
+  <div class="form">
+    <input type="file" id="imageFile" accept="image/*">
+    <input type="url" id="mediaUrl" placeholder="Media URL">
+    <select id="mediaType">
+      <option value="auto">Auto Detect</option>
+      <option value="image">Image</option>
+      <option value="video">Video</option>
+    </select>
+
+    <div class="preview" id="preview" style="display:none"></div>
+
+    <button id="saveBtn">Save Media</button>
+  </div>
+
+  <!-- GALLERY LIST -->
+  <div class="list" id="galleryList"></div>
+</div>
+<script type="module">
+import {
+  getDatabase,
+  ref,
+  push,
+  onChildAdded,
+  onChildChanged,
+  onChildRemoved,
+  update,
+  remove
+} from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+import { getApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+
+/* ================= USE EXISTING FIREBASE APP ================= */
+const app = getApp(); // ⬅️ IMPORTANT (no re-initialize)
+const db = getDatabase(app);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ================= DOM ELEMENTS ================= */
+  const imageFile   = document.getElementById("imageFile");
+  const mediaUrl    = document.getElementById("mediaUrl");
+  const mediaType   = document.getElementById("mediaType");
+  const preview     = document.getElementById("preview");
+  const saveBtn     = document.getElementById("saveBtn");
+  const galleryList = document.getElementById("galleryList");
+
+  // 🔐 SAFETY CHECK
+  if (!imageFile || !mediaUrl || !mediaType || !preview || !saveBtn || !galleryList) {
+    console.warn("Gallery elements not found on this page.");
+    return;
+  }
+
+  let editId = null;
+/* ================= Helpers ================= */
+function detectType(url){
+  return /\.(mp4|webm|ogg)$/i.test(url) ? "video" : "image";
+}
+
+// Make renderPreview global so other code can use it
+function renderPreview(){
+  preview.innerHTML = "";
+  preview.style.display = "none";
+  if (!mediaUrl.value) return;
+
+  const type = mediaType.value === "auto" ? detectType(mediaUrl.value) : mediaType.value;
+
+  if (type === "video") {
+    const v = document.createElement("video");
+    v.src = mediaUrl.value;
+    v.controls = true;
+    preview.appendChild(v);
+  } else {
+    const i = document.createElement("img");
+    i.src = mediaUrl.value;
+    preview.appendChild(i);
+  }
+
+  preview.style.display = "block";
+}
+window.renderPreview = renderPreview;
+
+/* ================= IMGBB Upload ================= */
+const IMGBB_KEY = "47f7dff148164ff31a5947e6ee635363";
+
+imageFile.addEventListener("change", async () => {
+  const file = imageFile.files[0];
+  if (!file) return;
+
+  preview.style.display = "block";
+  preview.innerHTML = "<p style='padding:20px;text-align:center'>Uploading image...</p>";
+
+  const fd = new FormData();
+  fd.append("image", file);
+
+  try {
+    const res = await fetch(
+      `https://api.imgbb.com/1/upload?key=${IMGBB_KEY}`,
+      { method: "POST", body: fd }
+    );
+    const data = await res.json();
+
+    mediaUrl.value = data.data.url;
+    mediaType.value = "image";
+    renderPreview();
+  } catch (err) {
+    alert("Image upload failed");
+    console.error(err);
+  }
+});
+
+/* ================= Manual URL Preview ================= */
+mediaUrl.addEventListener("input", renderPreview);
+mediaType.addEventListener("change", renderPreview);
+
+/* ================= Save / Update ================= */
+saveBtn.onclick = async () => {
+  if (!mediaUrl.value) return alert("Enter media");
+
+  const type = mediaType.value === "auto" ? detectType(mediaUrl.value) : mediaType.value;
+
+  if (editId) {
+    await update(ref(db, "gallery/" + editId), { url: mediaUrl.value, type });
+    editId = null;
+    saveBtn.textContent = "Save Media";
+  } else {
+    await push(ref(db, "gallery"), { url: mediaUrl.value, type });
+  }
+
+  mediaUrl.value = "";
+  preview.style.display = "none";
+};
+ 
+  /* ================= EVENTS ================= */
+  mediaUrl.addEventListener("input", renderPreview);
+  mediaType.addEventListener("change", renderPreview);
+
+  saveBtn.addEventListener("click", async () => {
+    if (!mediaUrl.value) return alert("Enter media");
+
+    const type = mediaType.value === "auto"
+      ? detectType(mediaUrl.value)
+      : mediaType.value;
+
+    if (editId) {
+      await update(ref(db, "gallery/" + editId), { url: mediaUrl.value, type });
+      editId = null;
+      saveBtn.textContent = "Save Media";
+    } else {
+      await push(ref(db, "gallery"), { url: mediaUrl.value, type });
+    }
+
+    mediaUrl.value = "";
+    preview.style.display = "none";
+  });
+
+  /* ================= GALLERY LIST ================= */
+  const galleryRef = ref(db, "gallery");
+
+  onChildAdded(galleryRef, snap => addCard(snap.key, snap.val()));
+  onChildChanged(galleryRef, snap => {
+    document.getElementById(snap.key)?.remove();
+    addCard(snap.key, snap.val());
+  });
+  onChildRemoved(galleryRef, snap => {
+    document.getElementById(snap.key)?.remove();
+  });
+
+  function addCard(id, data){
+    const card = document.createElement("div");
+    card.className = "card";
+    card.id = id;
+
+    card.innerHTML = `
+      ${data.type === "video"
+        ? `<video src="${data.url}" controls></video>`
+        : `<img src="${data.url}">`}
+      <div class="actions">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    `;
+
+    card.querySelector(".edit").onclick = () => {
+      editId = id;
+      mediaUrl.value = data.url;
+      mediaType.value = data.type;
+      renderPreview();
+      saveBtn.textContent = "Update Media";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    card.querySelector(".delete").onclick = () => {
+      if (confirm("Delete this item?")) {
+        remove(ref(db, "gallery/" + id));
+      }
+    };
+
+    galleryList.prepend(card);
+  }
+
+});
+</script>
+
+<!-- ================= ADMIN LOCK OVERLAY ================= -->
+<div id="admin-lock">
+  <div class="lock-box">
+    <h2>🔐 Admin Login</h2>
+    <p>Authorized access only</p>
+
+    <input type="email" id="adminEmail" placeholder="Admin Email">
+    <input type="password" id="adminPassword" placeholder="Password">
+
+    <button id="adminLoginBtn">Unlock Panel</button>
+
+    <div class="error" id="loginError"></div>
+  </div>
+</div>
+
+<script type="module">
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+
+const auth = getAuth();
+
+const lock      = document.getElementById("admin-lock");
+const emailEl   = document.getElementById("adminEmail");
+const passEl    = document.getElementById("adminPassword");
+const loginBtn  = document.getElementById("adminLoginBtn");
+const errorEl   = document.getElementById("loginError");
+
+/* ===== Login Button ===== */
+loginBtn.addEventListener("click", async () => {
+  errorEl.textContent = "";
+
+  if (!emailEl.value || !passEl.value) {
+    errorEl.textContent = "Enter email and password";
+    return;
+  }
+
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      emailEl.value.trim(),
+      passEl.value
+    );
+  } catch (err) {
+    errorEl.textContent = "Invalid login credentials";
+  }
+});
+
+/* ===== Auth Guard ===== */
+onAuthStateChanged(auth, user => {
+  if (user) {
+    lock.style.display = "none";   // unlock admin
+  } else {
+    lock.style.display = "flex";   // lock admin
+  }
+});
+</script>
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  padding: 12px 20px;
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-card {
+  background: #1e293b;
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message-card .info span {
+  font-weight: 600;
+}
+
+.message-card .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.message-card button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.empty {
+  text-align: center;
+  opacity: 0.6;
+  padding: 40px;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  .message-card {
+    padding: 12px;
+  }
+}
+</style>
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#020617;
+  color:#fff;
+}
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+}
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
+.form{
+  background:#0f172a;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,.6);
+}
+.form input, .form select{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  margin-top:10px;
+  background:#1e293b;
+  color:#fff;
+}
+.form button{
+  margin-top:15px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  font-weight:bold;
+  cursor:pointer;
+}
+.preview{
+  margin-top:15px;
+  border-radius:12px;
+  overflow:hidden;
+}
+.preview img,.preview video{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.list{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:15px;
+}
+.card{
+  background:#0f172a;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+}
+.card img,.card video{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.card .actions{
+  display:flex;
+}
+.card button{
+  flex:1;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  font-size:.85rem;
+}
+.edit{background:#3b82f6;color:#fff}
+.delete{background:#ef4444;color:#fff}
+</style>
+<style>
+/* Fullscreen lock */
+#admin-lock{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp") center/cover no-repeat;
+  font-family:Arial, sans-serif;
+}
+
+/* Login card */
+.lock-box{
+  width:100%;
+  max-width:380px;
+  background:#020617;
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.8);
+}
+
+.lock-box h2{
+  margin:0 0 10px;
+}
+
+.lock-box p{
+  opacity:.7;
+  margin-bottom:20px;
+}
+
+.lock-box input{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:12px;
+  background:#0f172a;
+  color:#fff;
+  font-size:1rem;
+}
+
+.lock-box button{
+  width:100%;
+  margin-top:18px;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  font-weight:bold;
+  cursor:pointer;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.error{
+  margin-top:12px;
+  color:#ef4444;
+  font-size:.9rem;
+}
+</style>
+
+</body>
+</html>

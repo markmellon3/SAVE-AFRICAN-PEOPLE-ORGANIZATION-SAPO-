@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="view<!DOCTYPEport" content="width=device-width, initial-scale=1.0" />
+  <title>SAVE AFRICAN LIVES – GIVE HOPE TODAY </title>
+<!-- Favicon -->
+<link rel="icon" type="image/webp" sizes="16x16" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="32x32" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="96x96" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Text auto scales */
+.logo-text{
+  font-size: clamp(16px, 3vw, 24px);
+  white-space: nowrap;
+}
+
+/* Circular logo container */
+.logo-icon{
+  width: clamp(30px, 4vw, 45px);
+  height: clamp(30px, 4vw, 45px);
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image scales perfectly */
+.logo-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header.hero {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: white;
+      text-align: center;
+      padding: 9rem 1.5rem 6rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.25rem, 3.5vw, 1.55rem);
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5.5rem 0;
+    }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #1e40af;
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      max-width: 820px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      color: #4b5563;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #d1d5db;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-item {
+      padding: 1.6rem 2.5rem;
+      position: relative;
+      background: white;
+      border-radius: 10px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .timeline-item.left {
+      margin-right: 55%;
+    }
+
+    .timeline-item.right {
+      margin-left: 55%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #3b82f6;
+      border-radius: 50%;
+      top: 30px;
+    }
+
+    .timeline-item.left::after {
+      right: -10px;
+    }
+
+    .timeline-item.right::after {
+      left: -10px;
+    }
+
+    .year {
+      font-weight: 700;
+      color: #1e40af;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .mission-values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 3rem 0;
+    }
+
+    .value-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .value-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: #1e40af;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+      margin-top: 6rem;
+    }
+
+    @media (max-width: 900px) {
+      .timeline::before { left: 30px; }
+      .timeline-item.left, .timeline-item.right {
+        margin: 2rem 0 2rem 70px;
+      }
+      .timeline-item::after { left: 20px; }
+      .year { margin-left: 0; }
+    }
+ 
+        .slogans {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 50px 20px;
+            background: #fff;
+        }
+        .slogan-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            width: 320px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .slogan-card:hover {
+            transform: translateY(-10px);
+        }
+        .slogan-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .slogan-content {
+            padding: 25px;
+            text-align: center;
+        }
+        .slogan-content h3 {
+            color: #e74c3c;
+            margin: 0 0 12px;
+            font-size: 1.5rem;
+        }
+        .donation-section {
+            max-width: 480px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 40px;
+        }
+        .donation-section h2 {
+            color: #c0392b;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        .donation-section p.intro {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        label {
+            font-weight: 600;
+            color: #34495e;
+        }
+        input, #card-element {
+            padding: 14px;
+            border: 1px solid #dfe6e9;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        input:focus, #card-element:focus {
+            outline: none;
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+        }
+        button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        #card-errors {
+            color: #e74c3c;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .heart-note {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 25px;
+            font-size: 1.05rem;
+        }
+        .small-text {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-text">🌍 SAVE AFRICAN PEOPLE DONATION PAGE</span>
+
+    <!-- Circular flame logo placeholder -->
+    <span class="logo-icon">
+      <img src="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp " alt="Organization Logo">
+    </span>
+  </div>
+
+  <nav>
+    <a href="#">DONATION</a>
+    <a href="#"></a>
+    <a href="#"> </a>
+  </nav>
+</header>
+        <h1>One Act of Kindness Can Change a Life Forever</h1>
+        <p style="font-size: 1.4rem; max-width: 700px; margin: 20px auto;">
+            Right now, a child in Africa is hungry, a mother is praying for medicine, a family is hoping for clean water.  
+            <strong>Your help today can be their miracle.</strong>
+        </p>
+        <section class="slogans">
+        <div class="slogan-card">
+            <img src="https://i.ibb.co/20m09X7L/051b8fd62f41eb050edd8c6c09083d6d.webp" alt="Child smiling">
+            <div class="slogan-content">
+                <h3>A Meal Means Everything</h3>
+                <p>For just $10, you can feed a child for a whole month. Your gift fills an empty stomach and brings back a smile.</p>
+            </div>
+        </div>
+
+        <div class="slogan-card">
+            <img src="https://i.ibb.co/S7nt9Bmf/68802f990415ac86c9687307249d3072.webp" alt="Child learning">
+            <div class="slogan-content">
+                <h3>Education Changes Destiny</h3>
+                <p>$25 can provide school supplies and books for a child who dreams of becoming a doctor, teacher, or leader.</p>
+            </div>
+        </div>
+
+        <div class="slogan-card">
+            <img src="https://i.ibb.co/ccB6kN7M/6f49c81aed3b40df26c40d227d8bbdef.webp" alt="Helping hand">
+            <div class="slogan-content">
+                <h3>Hope Starts With You</h3>
+                <p>Every dollar you give today carries love, dignity, and a future to someone who needs it most.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-section">
+        <h2>Be Their Hope Today</h2>
+        <p class="intro">Your generosity can bring food to the hungry, medicine to the sick, and education to a child who has none.</p>
+
+        <form id="donation-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="e.g. Sarah Johnson" required>
+
+            <label for="country">Your Country</label>
+            <input type="text" id="country" placeholder="e.g. United States" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your.email@example.com" required>
+
+            <label for="amount">How much would you like to give? ($)</label>
+            <input type="number" id="amount" placeholder="e.g. 25" min="5" required>
+
+            <div id="card-element"></div>
+            <div id="card-errors" role="alert"></div>
+
+            <button type="submit">Donate Now & Change a Life</button>
+        </form>
+
+        <p class="heart-note">❤️ Thank you for caring. Your kindness is felt across continents.</p>
+        <p class="small-text">100% of your donation goes directly to helping families and children in need.</p>
+    </section>
+    
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getDatabase, ref, push, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBFG_t_gpU6TvSTpeN35aQTalZpMDV2dKQ",
+  authDomain: "save-africa-fb494.firebaseapp.com",
+  projectId: "save-africa-fb494",
+  storageBucket: "save-africa-fb494.firebasestorage.app",
+  messagingSenderId: "132840027455",
+  appId: "1:132840027455:web:f0350b2dedb572ea984f8a",
+  measurementId: "G-1T13K0RS7D"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Stripe
+const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element');
+
+document.getElementById('donation-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name    = document.getElementById('name').value;
+  const country = document.getElementById('country').value;
+  const email   = document.getElementById('email').value;
+  const amount  = document.getElementById('amount').value;
+
+  await push(ref(db, 'donators_information'), {
+    name,
+    country,
+    email,
+    amount,
+    timestamp: serverTimestamp()
+  });
+
+  const { token, error } = await stripe.createToken(card);
+  if (error) {
+    alert(error.message);
+  } else {
+    alert(`Thank you ${name}! ❤️`);
+    e.target.reset();
+    card.clear();
+  }
+});
+</script>
+    <footer>
+  <p>Save African People Organization (SAPO)</p>
+  <p style="margin-top:1.2rem; opacity:0.85; font-size:0.98rem;">
+    Kakindu Village, Katabi Town Council, Wakiso District • Since 2021<br>
+    Transforming lives through Wealth, Health, Education, Gospel & Talent Empowerment
+  </p>
+  <p><a href="https://markmellon3.github.io/Aboutmmindustry-/ " target="_blank" 
+     style="display:flex; align-items:center; gap:8px; text-decoration:none; transition:opacity 0.3s;">
+  <p>POWERED BY MARKMELLON</p>
+   <!-- Text -->
+    <span style="
+      padding:4px 10px;
+      
+      color:#fff;
+      font-weight:600;
+      font-size:13px;
+      border-radius:6px;
+      transition:background 0.3s;
+    " 
+    onmouseover="this.style.background='#2563eb';" 
+    onmouseout="this.style.background='#3b82f6';">
+      
+    </span>
+  </a>
+</footer>
+    </body>
+    </html>

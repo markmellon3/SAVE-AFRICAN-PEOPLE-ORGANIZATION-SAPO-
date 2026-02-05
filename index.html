@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="view<!DOCTYPEport" content="width=device-width, initial-scale=1.0" />
+  <title>SAVE AFRICAN PEOPLE ORGANIZATION</title>
+<!-- Favicon -->
+<link rel="icon" type="image/webp" sizes="16x16" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="32x32" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="96x96" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+
+   
+      /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      min-height: 35vh;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_equals_projection.svg/1280px-World_map_-_equals_projection.svg.png') center/cover no-repeat #f5f5f5; /* faint world map */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 100px;
+      text-align: left;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text {
+      color: #000000;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 68px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+      font-weight: 800;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(transparent 60%, #f9a825 60%);
+      padding: 0 6px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      line-height: 1.5;
+      max-width: 520px;
+      margin-bottom: 40px;
+      color: #444;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-actions .primary {
+      padding: 16px 40px;
+      background: #46c331;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .hero-actions .secondary {
+      font-size: 17px;
+      color: #ff0a00;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Africa-shaped image reveal (child portrait inside continent) */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 620px;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://i.ibb.co/TxnYbKf5/1000774403.jpg') center/cover no-repeat; /* ← REPLACE WITH YOUR CHILD PORTRAIT URL */
+      -webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f9/BlankMap-Africa.svg');
+      mask-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f9/BlankMap-Africa.svg');
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-mode: alpha;
+      mask-mode: alpha;
+    }
+
+    /* Brush strokes / paint accents */
+    .paint {
+      position: absolute;
+      border-radius: 60px;
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+   
+    .stat h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .stat p {
+      font-size: 14px;
+      margin-top: 8px;
+      max-width: 120px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .hero {
+        padding: 0 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 54px;
+      }
+
+      .hero-image {
+        height: 520px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 140px 30px 80px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .hero-image {
+        height: 480px;
+        max-width: 420px;
+        margin-top: 40px;
+      }
+
+      
+      .stat {
+        bottom: -5%;
+        right: 50%;
+        transform: translateX(50%);
+        width: 150px;
+        height: 150px;
+      }
+
+      .stat h2 { font-size: 58px; }
+    }
+
+    /* Optional stat overlay on map */
+    .stat {
+        position: absolute;
+        bottom: 8%;
+        right: 10%;
+        text-align: center;
+        color: #fff;
+        z-index: 3;
+    }
+
+    .stat h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 64px;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .stat p {
+        font-size: 14px;
+        margin: 8px 0 0;
+        opacity: 0.85;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1100px) {
+        .hero {
+            padding: 0 40px;
+        }
+
+        .hero::before {
+            -webkit-mask-size: 90% auto;
+            mask-size: 90% auto;
+        }
+
+        .hero-content {
+            max-width: 60%;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .hero {
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 30px 80px;
+            text-align: center;
+        }
+
+        .hero::before {
+            -webkit-mask-size: 100% auto;
+            mask-size: 100% auto;
+            -webkit-mask-position: center 55%; /* shift up a bit if needed */
+            mask-position: center 55%;
+        }
+
+        .hero-content {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .paint.green,
+        .paint.orange {
+            width: 120px;
+            height: 50px;
+        }
+
+        .paint.green { top: 15%; left: 5%; }
+        .paint.orange { bottom: 15%; right: 5%; }
+
+        .stat {
+            bottom: 5%;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        .stat h2 { font-size: 48px; }
+    }
+
+    @media (max-width: 600px) {
+        header {
+            padding: 15px 25px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav {
+            order: 3;
+            margin-top: 8px;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Text auto scales */
+.logo-text{
+  font-size: clamp(16px, 3vw, 24px);
+  white-space: nowrap;
+}
+
+/* Circular logo container */
+.logo-icon{
+  width: clamp(30px, 4vw, 45px);
+  height: clamp(30px, 4vw, 45px);
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image scales perfectly */
+.logo-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+      margin-top: 6rem;
+    }
+
+    @media (max-width: 900px) {
+      .timeline::before { left: 30px; }
+      .timeline-item.left, .timeline-item.right {
+        margin: 2rem 0 2rem 70px;
+      }
+      .timeline-item::after { left: 20px; }
+      .year { margin-left: 0; }
+    }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-text">🌍 SAVE AFRICAN PEOPLE ORGANIZATION</span>
+
+    <!-- Circular flame logo placeholder -->
+    <span class="logo-icon">
+      <img src="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp " alt="Organization Logo">
+    </span>
+  </div>
+
+  <nav>
+    <a href="about.html">ABOUT US </a>
+    <a href="Gallery.html">GALLERY </a>
+    <a href="#">CONTACT </a>
+  </nav>
+  
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>A world where no <span>child’s life</span><br>is torn apart by war.</h1>
+    <p>
+      Welcome to Save African People Organization (SAPO)
+We are excited to have you herel|! Our mission is to improve Wealih, Health, Educalior and to promote Gospel and young Talents of Africans.
+    </p>
+    
+    <div class="hero-actions">
+     <a class="primary" href="donation.html">Donate now</a>
+      <a class="secondary" href="#" id="openStructure">organization Structure →</a>
+      
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="africa-shape">
+      <div class="paint green"></div>
+      <div class="paint orange"></div>
+    </div>
+    <div class="stat">
+      
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW CARD -->
+<div class="sapo-preview-card">
+  <div class="sapo-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/482/482137.png" class="flame-icon">
+    <h2>Save African People Organization (SAPO)</h2>
+  </div>
+  <p>
+    Welcome to Save African People Organization (SAPO).
+    Our mission is to improve Wealth, Health, Education and
+    promote Gospel and young Talents of Africans.
+  </p>
+  <button id="openSapoModal" class="read-more-btn">Read more →</button>
+</div>
+
+<!-- MODAL -->
+<div class="sapo-modal-overlay" id="sapoModal">
+  <div class="sapo-modal-card" id="modalCard">
+
+    <button class="close-btn" id="closeSapoModal">&times;</button>
+
+    <div class="sapo-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/482/482137.png" class="flame-icon">
+      <h2>Save African People Organization (SAPO)</h2>
+    </div>
+
+    <!-- CONTROLS: READING MODE + TTS -->
+    <div class="modal-controls">
+      <button id="toggleReadingMode">🔍 Reading Mode</button>
+      <button id="ttsPlayBtn">▶️ Play</button>
+      <button id="ttsPauseBtn">⏸ Pause</button>
+      <button id="ttsStopBtn">⏹ Stop</button>
+    </div>
+
+    <!-- CONTENT PARAGRAPHS -->
+    <div id="modalContent">
+      <p>
+       Welcome to Save African People Organization (SAPO) We are excited to have you here!! Our mission is to improve 
+        <strong>Wealth, Health, Education</strong> and to promote the
+        <strong>Gospel and young talents of Africans</strong>.
+      </p>
+
+      <p>
+        This is achieved through organizing different donation series,
+        free scholastic support, free food for people in need, and
+        organizing musical events such as
+        <strong>Cream and Kyomo Gospel Fest (27th December)</strong>.
+      </p>
+
+      <p>
+        These events help generate funds used to purchase essential
+        items including food, books, pens, clothes, and other equipment.
+      </p>
+
+      <h3>Project History</h3>
+      <ul>
+        <li><strong>2021:</strong> Supported 25 people with food and rice/sugar.</li>
+        <li><strong>2022:</strong> 50 pupils at St. Charles Primary School received pens and books.</li>
+        <li><strong>2023:</strong> A candidate at St. Charles Primary School received term two fees.</li>
+        <li><strong>2024:</strong> 100+ pupils at Kakindu Standard Primary School received pens and books.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<section class="causes-section">
+  <div class="causes-container">
+    <div class="cause-card">
+      <div class="cause-icon">🍲</div> <!-- You can replace with SVG/icon font -->
+      <h3>Healthy Food</h3>
+      <p>We provide nutritious meals to underprivileged children to support their growth and development.</p>
+    </div>
+
+    <div class="cause-card highlight"> <!-- Added .highlight for the hovered/featured look -->
+      <div class="cause-icon">📚</div>
+      <h3>Education</h3>
+      <p>Building bright futures through quality schooling, books, and learning materials.</p>
+    </div>
+
+    <div class="cause-card">
+      <div class="cause-icon">💧</div>
+      <h3>Pure Water</h3>
+      <p>Installing clean water points and educating communities on hygiene and sanitation.</p>
+    </div>
+
+    <div class="cause-card">
+      <div class="cause-icon">🩺</div>
+      <h3>Medical</h3>
+      <p>Delivering healthcare, vaccinations, and medical camps to remote areas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="impact-section">
+  <div class="impact-content">
+    <h2>What have we done with<br>your help?</h2>
+    <p>Thanks to generous supporters like you, we've transformed lives across communities. Here are some of the smiling faces we've helped together.</p>
+
+    <div class="impact-collage">
+      <!-- Replace these src with your actual images -->
+      <img src="https://i.ibb.co/TxnYbKf5/1000774403.jpg" alt="Happy children group" class="collage-img main">
+      <img src="https://i.ibb.co/20m09X7L/051b8fd62f41eb050edd8c6c09083d6d.webp" alt="Kids smiling" class="collage-img small top-right">
+      <img src="https://i.ibb.co/ccB6kN7M/6f49c81aed3b40df26c40d227d8bbdef.webp" alt="Child writing" class="collage-img medium">
+      <img src="https://i.ibb.co/LX6BpMd6/1000774404.jpg" alt="Kids with camera" class="collage-img small bottom">
+    </div>
+    <style>
+  /* ================== Causes Section ================== */
+  .causes-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  .causes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+  }
+
+  .cause-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .cause-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  }
+
+  .cause-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ff6b35; /* accent color - change as needed */
+  }
+
+  .cause-card h3 {
+    font-size: 1.6rem;
+    margin: 0 0 15px;
+    color: #333;
+  }
+
+  .cause-card p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Highlight/featured card (like Education in your screenshot) */
+  .cause-card.highlight {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cause-card.highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(255,107,53,0.08);
+    z-index: -1;
+  }
+
+  /* ================== Impact Section ================== */
+  .impact-section {
+    padding: 80px 20px;
+    background: #fff;
+    position: relative;
+  }
+
+  .impact-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .impact-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #222;
+    line-height: 1.2;
+  }
+
+  .impact-content > p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+
+  .impact-collage {
+    position: relative;
+    height: 500px; /* adjust based on your images */
+    max-width: 900px;
+    margin: 0 auto 50px;
+  }
+
+  .collage-img {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    object-fit: cover;
+  }
+
+  .main {
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+  }
+
+  .top-right {
+    width: 30%;
+    height: 40%;
+    top: 0;
+    right: 5%;
+  }
+
+  .medium {
+    width: 35%;
+    height: 50%;
+    bottom: 10%;
+    left: 10%;
+  }
+
+  .bottom {
+    width: 28%;
+    height: 45%;
+    bottom: 5%;
+    right: 15%;
+  }
+
+  /* CTA buttons */
+  .cta-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-donate,
+  .btn-about {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-donate {
+    background: #ff6b35;
+    color: white;
+  }
+
+  .btn-donate:hover {
+    background: #e55a2d;
+    transform: translateY(-3px);
+  }
+
+  .btn-about {
+    background: #333;
+    color: white;
+  }
+
+  .btn-about:hover {
+    background: #222;
+    transform: translateY(-3px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .impact-collage {
+      height: 400px;
+    }
+    .main { width: 70%; left: 15%; }
+    .top-right { width: 40%; right: 5%; }
+    .medium { width: 45%; left: 5%; }
+    .bottom { width: 38%; right: 10%; }
+  }
+
+  @media (max-width: 480px) {
+    .impact-collage {
+      height: 320px;
+      position: relative;
+    }
+    .collage-img {
+      position: static;
+      display: block;
+      margin: 15px auto;
+      width: 90% !important;
+      height: auto !important;
+    }
+  }
+  
+  /* MODAL OVERLAY */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: background 0.35s ease;
+}
+
+/* SHOW OVERLAY */
+.modal-overlay.active {
+  display: flex;
+  background: rgba(0,0,0,0.6);
+}
+
+/* MODAL PANEL */
+.modal-panel {
+  background: #fff;
+  width: 95%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  padding: 22px;
+  position: relative;
+
+  /* Animation start state */
+  transform: translateY(40px) scale(0.96);
+  opacity: 0;
+
+  transition:
+    transform 0.4s cubic-bezier(.22,1,.36,1),
+    opacity 0.3s ease;
+}
+
+/* ANIMATE IN */
+.modal-overlay.active .modal-panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  opacity: 0.7;
+}
+<style>
+/* ===============================
+   GLOBAL STYLES
+================================ */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #020617;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ===============================
+   PREVIEW CARD
+================================ */
+.sapo-preview-card {
+  max-width: 920px;
+  margin: 70px auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.sapo-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.flame-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.sapo-preview-card h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  color: #020617;
+}
+
+.sapo-preview-card p {
+  margin-top: 16px;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+/* READ MORE BUTTON */
+.read-more-btn {
+  margin-top: 20px;
+  background: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29,78,216,0.35);
+}
+
+/* ===============================
+   MODAL OVERLAY
+================================ */
+.sapo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.sapo-modal-overlay.active {
+  display: flex;
+}
+
+/* ===============================
+   MODAL CARD
+================================ */
+.sapo-modal-card {
+  background: #ffffff;
+  width: 95%;
+  max-width: 950px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px;
+  border-radius: 20px;
+  position: relative;
+  transform: translateY(60px) scale(0.95);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.4s ease;
+}
+
+.sapo-modal-overlay.active .sapo-modal-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #020617;
+}
+
+/* MODAL CONTENT */
+.sapo-modal-card h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.sapo-modal-card p {
+  font-size: 18px;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.sapo-modal-card strong {
+  font-weight: 800;
+  color: #020617;
+}
+
+.sapo-modal-card h3 {
+  margin-top: 28px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.sapo-modal-card ul {
+  padding-left: 22px;
+}
+
+.sapo-modal-card li {
+  font-size: 17px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+/* ===============================
+   MODAL BUTTONS (READING MODE + TTS)
+================================ */
+.modal-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+.modal-controls button {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.modal-controls button:hover {
+  background: #2563eb;
+}
+
+/* READING MODE ACTIVE */
+.sapo-modal-card.reading-mode p,
+.sapo-modal-card.reading-mode li,
+.sapo-modal-card.reading-mode h4,
+.sapo-modal-card.reading-mode h3 {
+  font-size: 27px !important;
+  line-height: 2 !important;
+}
+
+</style>
+<!-- ====================== SMILE UGANDA VISION & ACTIVITIES ====================== -->
+<section class="vision-section" id="vision">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Transforming Lives</h2>
+      <p class="lead">
+        Promoting the gospel • Discovering & promoting talents • Fighting depression & drug abuse • 
+        Empowering youth with knowledge, skills & inspiration
+      </p>
+    </div>
+
+    <div class="card-grid">
+
+      <!-- Mission -->
+      <div class="card mission-card">
+        <div class="card-header">Our Mission</div>
+        <div class="card-body">
+          <p>Ensuring the proper operating of the activities with an <strong>immediate effect</strong> and to protect the <strong>future prosperity</strong> of the vision.</p>
+        </div>
+      </div>
+
+      <!-- Purpose / What we do -->
+      <div class="card">
+        <div class="card-header">Our Purpose</div>
+        <div class="card-body">
+          <p>Transforming lives through:</p>
+          <ul>
+            <li>Promoting the gospel</li>
+            <li>Promoting talents</li>
+            <li>Promoting education</li>
+            <li>Fighting depression and drug abuse</li>
+            <li>Empowering youths with knowledge and skills of surviving using their talents</li>
+            <li>Giving inspiration and motivation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Activities -->
+      <div class="card activities-card">
+        <div class="card-header">Our Main Activities</div>
+        <div class="card-body">
+          <ul class="activity-list">
+            <li>
+              <strong>Donations</strong><br>
+              Different donations are organized in schools and communities to give inspiration and motivation to people.
+            </li>
+            <li>
+              <strong>School Outreach</strong><br>
+              Mainly done to give guidance to students, promote different talents in schools, promote the gospel, and create a stress-free environment.
+            </li>
+            <li>
+              <strong>Organizing Events</strong><br>
+              Different gospel events like Smile Uganda gospel concert, Cream & Kyomo gospel festival, and Gospel Clubs day — to collect funds for donations, promote talents and gospel music, and give a platform to young talents.
+            </li>
+            <li>
+              <strong>Use of Media</strong><br>
+              Different media platforms are used to promote the activities of the vision, generate funds and sponsorships, mobilize more people, and give inspiration and motivation.
+            </li>
+            <li>
+              <strong>EDUCATION NET</strong><br>
+              A system organized to provide scholarships to schoolers at any level through paying tuition and fees to students in need.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Objectives -->
+      <div class="card objectives-card">
+        <div class="card-header">Our Objectives</div>
+        <div class="card-body">
+          <ul>
+            <li>To organize in large numbers school outreaches</li>
+            <li>To increase numbers of community donations</li>
+            <li>To organize youth day talks</li>
+            <li>To grow our media accounts</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Add this CSS at the end of your <head> or in your main stylesheet -->
+<style>
+  .vision-section {
+    padding: 80px 0;
+    background: #f9fafb;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #1e3a8a;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    max-width: 780px;
+    margin: 0 auto;
+    color: #555;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: all 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+  }
+
+  .card-header {
+    padding: 1.3rem 1.8rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: white;
+  }
+
+  .mission-card .card-header    { background: #047857; }
+  .activities-card .card-header { background: #7c3aed; }
+  .objectives-card .card-header { background: #c2410c; }
+  .card-header:not(.mission-card .card-header):not(.activities-card .card-header):not(.objectives-card .card-header) {
+    background: #1e40af;
+  }
+
+  .card-body {
+    padding: 1.8rem;
+  }
+
+  .card-body p, .card-body li {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  .activity-list li {
+    margin-bottom: 1.4rem;
+  }
+
+  .activity-list strong {
+    color: #1e3a8a;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+</style>
+<!-- STRUCTURE MODAL -->
+<div id="structureModal" class="modal-overlay">
+  <div class="modal-panel">
+    <button class="close-btn" id="closeStructure">&times;</button>
+
+    <!-- YOUR CONTENT STARTS -->
+    <header>
+      <h1>Organizational Structure</h1>
+      <p class="subtitle">Clear roles • Strong leadership • Unified vision</p>
+    </header>
+
+    <div class="container">
+
+      <section>
+        <h2 class="section-title">Leadership & Governance</h2>
+
+        <div class="card">
+          <div class="card-header" style="background:#1e40af;">Chief Executive Officer (CEO)</div>
+          <div class="card-body">
+            <ul>
+              <li>The highest-ranking executive in a company or organization</li>
+              <li>Responsible for making strategic decisions and overseeing overall operations</li>
+              <li>Reports to the board of directors and shareholders</li>
+              <li>Ensures overall success of the organization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" style="background:#2563eb;">Chief Operating Officer (COO)</div>
+          <div class="card-body">
+            <ul>
+              <li>Oversees daily operations</li>
+              <li>Implements CEO decisions</li>
+              <li>Manages departments</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" style="background:#059669;">Board of Elders</div>
+          <div class="card-body">
+            <ul>
+              <li>Gives advice</li>
+              <li>Ensures unity</li>
+              <li>Promotes discipline</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" style="background:#c2410c;">Financial Supportives Board</div>
+          <div class="card-body">
+            <ul>
+              <li>Finance activities</li>
+              <li>Plan budgets</li>
+              <li>Ensure steady funds</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Alpha Board</h2>
+        <div class="card">
+          <div class="card-header" style="background:#7c3aed;">Field Members</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Treasurer</strong> – Handles all finances</li>
+              <li><strong>Secretary</strong> – Documentation & partnerships</li>
+              <li><strong>Mobilizer</strong> – Activity coordination</li>
+              <li><strong>Media Manager</strong> – Media & publicity</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <!-- YOUR CONTENT ENDS -->
+
+  </div>
+</div>
+<script>
+  const openBtn = document.getElementById("openStructure");
+  const closeBtn = document.getElementById("closeStructure");
+  const modal = document.getElementById("structureModal");
+
+  openBtn.addEventListener("click", e => {
+    e.preventDefault();
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById("openSapoModal");
+  const closeBtn = document.getElementById("closeSapoModal");
+  const modal = document.getElementById("sapoModal");
+  const modalCard = document.getElementById("modalCard");
+
+  const readingBtn = document.getElementById("toggleReadingMode");
+
+  const ttsPlayBtn = document.getElementById("ttsPlayBtn");
+  const ttsPauseBtn = document.getElementById("ttsPauseBtn");
+  const ttsStopBtn = document.getElementById("ttsStopBtn");
+
+  const modalContent = document.getElementById("modalContent");
+
+  let utterance;
+  let isSpeaking = false;
+
+  /* OPEN/CLOSE MODAL */
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+    stopTTS();
+  });
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+      stopTTS();
+    }
+  });
+
+  /* READING MODE TOGGLE */
+  readingBtn.addEventListener("click", () => {
+    modalCard.classList.toggle("reading-mode");
+  });
+
+  /* TEXT TO SPEECH FUNCTIONS */
+  function stopTTS() {
+    if ('speechSynthesis' in window) {
+      speechSynthesis.cancel();
+      isSpeaking = false;
+    }
+  }
+
+  ttsPlayBtn.addEventListener("click", () => {
+    if ('speechSynthesis' in window && !isSpeaking) {
+      const paragraphs = modalContent.querySelectorAll("p, li");
+      let textToSpeak = "";
+      paragraphs.forEach(p => { textToSpeak += p.innerText + ". "; });
+
+      utterance = new SpeechSynthesisUtterance(textToSpeak);
+      speechSynthesis.speak(utterance);
+      isSpeaking = true;
+    } else if (speechSynthesis.paused) {
+      speechSynthesis.resume();
+    }
+  });
+
+  ttsPauseBtn.addEventListener("click", () => {
+    if ('speechSynthesis' in window) {
+      speechSynthesis.pause();
+    }
+  });
+
+  ttsStopBtn.addEventListener("click", () => {
+    stopTTS();
+  });
+});
+</script>
+<footer>
+  <p>Save African People Organization (SAPO)</p>
+  <p style="margin-top:1.2rem; opacity:0.85; font-size:0.98rem;">
+    Kakindu Village, Katabi Town Council, Wakiso District • Since 2021<br>
+    Transforming lives through Wealth, Health, Education, Gospel & Talent Empowerment
+  </p><p><a href="https://markmellon3.github.io/Aboutmmindustry-/ " target="_blank" 
+     style="display:flex; align-items:center; gap:8px; text-decoration:none; transition:opacity 0.3s;">
+  <p>POWERED BY MARKMELLON</p>
+   <!-- Text -->
+    <span style="
+      padding:4px 10px;
+      
+      color:#fff;
+      font-weight:600;
+      font-size:13px;
+      border-radius:6px;
+      transition:background 0.3s;
+    " 
+    onmouseover="this.style.background='#2563eb';" 
+    onmouseout="this.style.background='#3b82f6';">
+      
+    </span>
+  </a>
+</footer>
+
+</body>
+</html>
+</body>
+</html>

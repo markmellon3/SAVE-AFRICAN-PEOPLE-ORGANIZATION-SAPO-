@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="view<!DOCTYPEport" content="width=device-width, initial-scale=1.0" />
+  <title>SAVE AFRICAN PEOPLE ORGANIZATION GALLERY </title>
+<!-- Favicon -->
+<link rel="icon" type="image/webp" sizes="16x16" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="32x32" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<link rel="icon" type="image/webp" sizes="96x96" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #111;
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* slight transparency for map visibility */
+        backdrop-filter: blur(8px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #ff0a00;
+        font-size: 14px;
+    }
+    .site-header{
+  padding: 12px 20px;
+  background: #0f172a;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Text auto scales */
+.logo-text{
+  font-size: clamp(16px, 3vw, 24px);
+  white-space: nowrap;
+}
+
+/* Circular logo container */
+.logo-icon{
+  width: clamp(30px, 4vw, 45px);
+  height: clamp(30px, 4vw, 45px);
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image scales perfectly */
+.logo-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+footer {
+  /* Heading */
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+}
+</style>
+</head>
+<!-- ==========================
+     Header + Gallery Component
+=========================== -->
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-text">🌍 SAVE AFRICAN PEOPLE ORGANIZATION GALLERY</span>
+    <span class="logo-icon">
+      <img src="https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp" alt="Organization Logo">
+    </span>
+  </div>
+  <nav>
+    <a href="#">GALLERY</a>
+  </nav>
+</header>
+
+<div id="sap-gallery-component" class="sap-gallery-container">
+  <h1>📸 Gallery</h1>
+  <!-- Gallery Component with Popup -->
+<div id="sap-gallery-component" class="sap-gallery-container">
+  <h1>📸 Gallery</h1>
+  <div class="sap-gallery" id="sap-gallery"></div>
+  <div class="sap-gallery-empty" id="sap-gallery-empty">No gallery items yet</div>
+</div>
+
+<!-- Lightbox Popup -->
+<div id="sap-lightbox" style="display:none;">
+  <div id="sap-lightbox-overlay"></div>
+  <div id="sap-lightbox-content">
+    <span id="sap-lightbox-close">&times;</span>
+  </div>
+</div>
+
+<style>
+/* Gallery Grid */
+.sap-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Card styling */
+.media-card {
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  cursor: pointer;
+}
+
+.media-card img,
+.media-card video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* cover inside card */
+}
+
+/* Empty state */
+.sap-gallery-empty {
+  text-align: center;
+  opacity: 0.7;
+  padding: 40px;
+  font-size: 1rem;
+}
+
+/* Lightbox styles */
+#sap-lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#sap-lightbox-overlay {
+  position: absolute;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  top: 0; left: 0;
+}
+
+#sap-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sap-lightbox-content img,
+#sap-lightbox-content video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+#sap-lightbox-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sap-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+}
+</style>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getDatabase, ref, onChildAdded } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyBFG_t_gpU6TvSTpeN35aQTalZpMDV2dKQ",
+  authDomain: "save-africa-fb494.firebaseapp.com",
+  databaseURL: "https://save-africa-fb494-default-rtdb.firebaseio.com",
+  projectId: "save-africa-fb494",
+  storageBucket: "save-africa-fb494.appspot.com",
+  messagingSenderId: "132840027455",
+  appId: "1:132840027455:web:f0350b2dedb572ea984f8a",
+  measurementId: "G-1T13K0RS7D"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const galleryRef = ref(db, "gallery");
+const galleryEl = document.getElementById("sap-gallery");
+const emptyEl = document.getElementById("sap-gallery-empty");
+
+function isVideo(url) {
+  return /\.(mp4|webm|ogg)$/i.test(url);
+}
+
+// Add gallery cards
+onChildAdded(galleryRef, (snapshot) => {
+  const data = snapshot.val();
+  if (!data || !data.url) return;
+
+  emptyEl.style.display = "none";
+
+  const card = document.createElement("div");
+  card.className = "media-card";
+
+  const media = (data.type === "video" || isVideo(data.url))
+    ? Object.assign(document.createElement("video"), { src: data.url, controls: true })
+    : Object.assign(document.createElement("img"), { src: data.url });
+
+  media.loading = "lazy";
+  card.appendChild(media);
+
+  // Click opens large popup
+  card.addEventListener("click", () => openLightbox(data.url, data.type));
+  galleryEl.prepend(card);
+});
+
+// Lightbox logic
+const lightbox = document.getElementById("sap-lightbox");
+const lightboxContent = document.getElementById("sap-lightbox-content");
+const lightboxClose = document.getElementById("sap-lightbox-close");
+const lightboxOverlay = document.getElementById("sap-lightbox-overlay");
+
+function openLightbox(url, type) {
+  lightboxContent.innerHTML = ""; // clear previous
+  let media;
+  if (type === "video" || isVideo(url)) {
+    media = Object.assign(document.createElement("video"), { src: url, controls: true, autoplay: true });
+  } else {
+    media = Object.assign(document.createElement("img"), { src: url });
+  }
+  lightboxContent.appendChild(media);
+  lightboxContent.appendChild(lightboxClose);
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+  lightbox.style.display = "none";
+  lightboxContent.innerHTML = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxOverlay.addEventListener("click", closeLightbox);
+</script>
+<script>
+// ===== PERMANENT WATERMARK (LOGO + TEXT) =====
+
+const watermarkLogo = "https://i.ibb.co/hxmzdJP3/Screenshot-20260204-100223-Gallery.webp";
+const watermarkText = "Save African People (SAPO) ";
+const logoSize = 40;
+const opacity = 0.45;
+
+function watermarkImage(img) {
+  if (img.dataset.watermarked) return;
+
+  // Force crossOrigin BEFORE loading
+  img.crossOrigin = "anonymous";
+
+  const apply = () => {
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    if (!w || !h) return;
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = w;
+    canvas.height = h;
+
+    // Draw original image
+    ctx.drawImage(img, 0, 0, w, h);
+
+    const logo = new Image();
+    logo.crossOrigin = "anonymous";
+    logo.src = watermarkLogo;
+
+    logo.onload = () => {
+      const padding = 15;
+      const logoW = logoSize;
+      const logoH = (logo.height / logo.width) * logoSize;
+
+      const x = w - logoW - padding;
+      const y = h - logoH - padding;
+
+      // Logo watermark
+      ctx.globalAlpha = opacity;
+      ctx.drawImage(logo, x, y, logoW, logoH);
+
+      // Text watermark
+      ctx.font = `bold ${Math.max(18, w * 0.035)}px Arial`;
+      ctx.fillStyle = `rgba(255,255,255,${opacity})`;
+      ctx.textAlign = "right";
+      ctx.fillText(watermarkText, w - padding, y - 8);
+
+      ctx.globalAlpha = 1;
+
+      // Replace image with watermarked version
+      img.src = canvas.toDataURL("image/png");
+      img.dataset.watermarked = "true";
+    };
+  };
+
+  // If image already loaded
+  if (img.complete) {
+    apply();
+  } else {
+    img.onload = apply;
+  }
+}
+
+// Apply to all images
+function applyWatermarks() {
+  document.querySelectorAll("img").forEach(img => {
+    if (!img.dataset.watermarked) watermarkImage(img);
+  });
+}
+
+// Initial run
+window.addEventListener("load", applyWatermarks);
+
+// Watch dynamically added images (Firebase)
+const observer = new MutationObserver(applyWatermarks);
+observer.observe(document.body, { childList: true, subtree: true });
+</script>
